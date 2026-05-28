@@ -66,7 +66,7 @@ function GenerationSelect({
         ) : null}
         {selectedPack && selectedPackProgress?.fewestAttemptsToClear !== null ? (
           <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 sm:text-sm">
-            Fewest attempts {selectedPackProgress.fewestAttemptsToClear}
+            Fewest attempts {selectedPackProgress?.fewestAttemptsToClear ?? 0}
           </p>
         ) : null}
       </div>

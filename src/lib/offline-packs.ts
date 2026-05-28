@@ -42,15 +42,22 @@ const readDownloadedPackMap = (): DownloadedPackMap => {
 
     return Object.entries(parsed).reduce<DownloadedPackMap>(
       (accumulator, [key, value]) => {
+        const candidate = value as Partial<DownloadedPokemonPack> | null
+
         if (
-          value &&
-          typeof value === 'object' &&
-          typeof value.packId === 'string' &&
-          typeof value.cacheName === 'string' &&
-          typeof value.downloadedAt === 'string' &&
-          typeof value.total === 'number'
+          candidate &&
+          typeof candidate === 'object' &&
+          typeof candidate.packId === 'string' &&
+          typeof candidate.cacheName === 'string' &&
+          typeof candidate.downloadedAt === 'string' &&
+          typeof candidate.total === 'number'
         ) {
-          accumulator[key] = value as DownloadedPokemonPack
+          accumulator[key] = {
+            packId: candidate.packId,
+            cacheName: candidate.cacheName,
+            downloadedAt: candidate.downloadedAt,
+            total: candidate.total,
+          }
         }
 
         return accumulator
