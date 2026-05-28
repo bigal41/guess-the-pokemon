@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import pokeballIcon from '../assets/pokeball-icon.svg'
 import Button from '../components/Button'
 import GenerationSelect from '../components/GenerationSelect'
 import { useGameSession } from '../context/GameSessionContext'
+import {
+  isPackDownloaded,
+  subscribeToOfflinePackUpdates,
+} from '../lib/offline-packs'
 
 function Home() {
   const [selectedPackId, setSelectedPackId] = useState<string | null>(null)
+  const [isOnline, setIsOnline] = useState(() =>
+    typeof navigator === 'undefined' ? true : navigator.onLine,
+  )
+  const [selectedPackDownloaded, setSelectedPackDownloaded] = useState(false)
   const navigate = useNavigate()
   const { getPackProgress, hasPackRun, resetPackRun, startGame } = useGameSession()
   const selectedPackProgress = selectedPackId
@@ -14,9 +22,43 @@ function Home() {
     : null
   const selectedPackHasRun = selectedPackId ? hasPackRun(selectedPackId) : false
   const startButtonText = selectedPackHasRun ? 'resume run' : 'start game'
+  const canStartSelectedPack =
+    !!selectedPackId && (isOnline || selectedPackDownloaded)
+
+  useEffect(() => {
+    const handleOnline = () => {
+      setIsOnline(true)
+    }
+
+    const handleOffline = () => {
+      setIsOnline(false)
+    }
+
+    window.addEventListener('online', handleOnline)
+    window.addEventListener('offline', handleOffline)
+
+    return () => {
+      window.removeEventListener('online', handleOnline)
+      window.removeEventListener('offline', handleOffline)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!selectedPackId) {
+      setSelectedPackDownloaded(false)
+      return
+    }
+
+    const sync = () => {
+      setSelectedPackDownloaded(isPackDownloaded(selectedPackId))
+    }
+
+    sync()
+    return subscribeToOfflinePackUpdates(sync)
+  }, [selectedPackId])
 
   const handleStartGame = () => {
-    if (!selectedPackId) {
+    if (!selectedPackId || !canStartSelectedPack) {
       return
     }
 
@@ -58,8 +100,13 @@ function Home() {
           <Button
             text={startButtonText}
             onClick={handleStartGame}
-            disabled={!selectedPackId}
+            disabled={!canStartSelectedPack}
           />
+          {selectedPackId && !canStartSelectedPack ? (
+            <p className="mt-3 text-center text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+              Download this pack or go online to play it
+            </p>
+          ) : null}
           {selectedPackHasRun ? (
             <Button
               text="reset run"

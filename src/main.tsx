@@ -28,6 +28,7 @@ function AppShell() {
 
     let isRefreshing = false
     let intervalId: number | undefined
+    const hadControllerAtLoad = !!navigator.serviceWorker.controller
 
     const handleControllerChange = () => {
       if (isRefreshing) {
@@ -43,7 +44,7 @@ function AppShell() {
         const registration = await navigator.serviceWorker.register('/sw.js')
 
         const promptForUpdate = () => {
-          if (registration.waiting) {
+          if (hadControllerAtLoad && registration.waiting) {
             setWaitingWorker(registration.waiting)
             setShowUpdatePrompt(true)
           }
