@@ -1,0 +1,23 @@
+{
+  "name": "Guess The Pokemon",
+  "short_name": "GuessPokemon",
+  "description": "Offline-ready Pokemon guessing game with downloadable generation packs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ff9393",
+  "theme_color": "#ff9393",
+  "icons": [
+    {
+      "src": "/pwa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

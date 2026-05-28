@@ -1,0 +1,95 @@
+<svg width="1800" height="1100" viewBox="0 0 1800 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1800" height="1100" fill="#F78D95"/>
+  <circle cx="180" cy="160" r="120" fill="#F9A7AE" opacity="0.65"/>
+  <circle cx="1640" cy="940" r="180" fill="#F9A7AE" opacity="0.55"/>
+  <circle cx="1540" cy="150" r="82" fill="#FFB8BE" opacity="0.55"/>
+
+  <rect x="265" y="90" width="520" height="920" rx="52" fill="#26242D"/>
+  <rect x="285" y="110" width="480" height="880" rx="40" fill="#FDF7F3"/>
+  <rect x="470" y="128" width="110" height="16" rx="8" fill="#26242D" opacity="0.88"/>
+
+  <rect x="325" y="176" width="400" height="56" rx="20" fill="#FFF1F2"/>
+  <text x="350" y="212" fill="#202020" font-family="Arial, sans-serif" font-size="18" font-weight="700">←  Guess the Pokemon</text>
+  <rect x="581" y="188" width="110" height="30" rx="15" fill="#FFD9A8"/>
+  <text x="608" y="208" fill="#6B4318" font-family="Arial, sans-serif" font-size="14" font-weight="700">Gen 1-3</text>
+
+  <rect x="325" y="258" width="400" height="338" rx="32" fill="white"/>
+  <rect x="355" y="288" width="340" height="190" rx="24" fill="#FFF5F4"/>
+  <ellipse cx="524" cy="472" rx="108" ry="16" fill="#F0E0E2"/>
+  <g fill="#171717">
+    <ellipse cx="520" cy="365" rx="74" ry="82"/>
+    <circle cx="470" cy="308" r="30"/>
+    <circle cx="570" cy="308" r="30"/>
+    <rect x="494" y="424" width="56" height="74" rx="24"/>
+    <path d="M600 415C639 413 665 441 666 482C639 484 619 470 608 446L600 415Z"/>
+  </g>
+  <text x="432" y="532" fill="#5B5563" font-family="Arial, sans-serif" font-size="24" font-weight="700">Who's that Pokemon?</text>
+  <text x="420" y="572" fill="#1C1A20" font-family="Courier New, monospace" font-size="34" font-weight="700">_ _ _ _ _ _ _ _</text>
+
+  <rect x="325" y="626" width="400" height="62" rx="22" fill="white" stroke="#F1DADC" stroke-width="2"/>
+  <text x="352" y="666" fill="#AAA2AA" font-family="Arial, sans-serif" font-size="24">Type a name...</text>
+
+  <rect x="325" y="704" width="400" height="68" rx="22" fill="#FF3131"/>
+  <text x="487" y="748" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700">Guess</text>
+
+  <text x="326" y="808" fill="#8C6470" font-family="Arial, sans-serif" font-size="22" font-weight="700">Mistakes: 2/6</text>
+
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#3A313A">
+    <rect x="325" y="834" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="347" y="863">A</text>
+    <rect x="391" y="834" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="413" y="863">B</text>
+    <rect x="457" y="834" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="479" y="863">C</text>
+    <rect x="523" y="834" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="545" y="863">D</text>
+    <rect x="589" y="834" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="611" y="863">E</text>
+    <rect x="655" y="834" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="677" y="863">F</text>
+
+    <rect x="349" y="890" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="371" y="919">G</text>
+    <rect x="415" y="890" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="437" y="919">H</text>
+    <rect x="481" y="890" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="503" y="919">I</text>
+    <rect x="547" y="890" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="569" y="919">J</text>
+    <rect x="613" y="890" width="58" height="46" rx="16" fill="#FFF1F2"/><text x="635" y="919">K</text>
+  </g>
+
+  <rect x="1015" y="90" width="520" height="920" rx="52" fill="#26242D"/>
+  <rect x="1035" y="110" width="480" height="880" rx="40" fill="#FDF7F3"/>
+  <rect x="1220" y="128" width="110" height="16" rx="8" fill="#26242D" opacity="0.88"/>
+
+  <rect x="1075" y="176" width="400" height="56" rx="20" fill="#FFF1F2"/>
+  <text x="1100" y="212" fill="#202020" font-family="Arial, sans-serif" font-size="18" font-weight="700">←  Guess the Pokemon</text>
+  <rect x="1356" y="188" width="92" height="30" rx="15" fill="#D8F4BF"/>
+  <text x="1381" y="208" fill="#3B6C1E" font-family="Arial, sans-serif" font-size="14" font-weight="700">Correct!</text>
+
+  <rect x="1075" y="258" width="400" height="338" rx="32" fill="white"/>
+  <rect x="1105" y="288" width="340" height="190" rx="24" fill="#FFF8E8"/>
+  <ellipse cx="1274" cy="472" rx="108" ry="16" fill="#F4E8B9"/>
+  <circle cx="1275" cy="366" r="76" fill="#FFD93D"/>
+  <circle cx="1227" cy="316" r="28" fill="#FFD93D"/>
+  <circle cx="1325" cy="316" r="28" fill="#FFD93D"/>
+  <circle cx="1248" cy="360" r="8" fill="#1E1A19"/>
+  <circle cx="1304" cy="360" r="8" fill="#1E1A19"/>
+  <circle cx="1230" cy="384" r="10" fill="#FF707D"/>
+  <circle cx="1322" cy="384" r="10" fill="#FF707D"/>
+  <path d="M1256 394C1267 404 1282 404 1293 394" stroke="#1E1A19" stroke-width="6" stroke-linecap="round"/>
+  <path d="M1332 421C1374 420 1408 449 1420 484C1377 491 1338 470 1328 442L1332 421Z" fill="#FFD93D"/>
+  <path d="M1401 446L1430 421" stroke="#FFC400" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1430 421L1420 456" stroke="#FFC400" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1430 421L1456 433" stroke="#FFC400" stroke-width="10" stroke-linecap="round"/>
+  <text x="1202" y="532" fill="#5B5563" font-family="Arial, sans-serif" font-size="24" font-weight="700">You guessed it right</text>
+  <text x="1191" y="576" fill="#1C1A20" font-family="Arial, sans-serif" font-size="40" font-weight="700">Sparko</text>
+  <circle cx="1136" cy="280" r="8" fill="#FFE16A"/>
+  <circle cx="1166" cy="322" r="6" fill="#FFD13B"/>
+  <circle cx="1418" cy="274" r="7" fill="#FFE16A"/>
+  <circle cx="1440" cy="315" r="5" fill="#FFD13B"/>
+  <circle cx="1382" cy="294" r="5" fill="#FFE16A"/>
+
+  <rect x="1075" y="642" width="400" height="78" rx="24" fill="#FF3131"/>
+  <text x="1199" y="691" fill="white" font-family="Arial, sans-serif" font-size="30" font-weight="700">Next Pokemon</text>
+
+  <rect x="1075" y="744" width="400" height="152" rx="28" fill="#FFF1F2"/>
+  <text x="1107" y="788" fill="#342A34" font-family="Arial, sans-serif" font-size="22" font-weight="700">Suggested flow</text>
+  <text x="1107" y="828" fill="#6B5A66" font-family="Arial, sans-serif" font-size="21">• Use native keyboard first for speed</text>
+  <text x="1107" y="862" fill="#6B5A66" font-family="Arial, sans-serif" font-size="21">• Keep on-screen keys as optional mode</text>
+  <text x="1107" y="896" fill="#6B5A66" font-family="Arial, sans-serif" font-size="21">• Reveal with a short animation</text>
+
+  <text x="515" y="1048" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700">Guessing State</text>
+  <text x="1265" y="1048" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700">Reveal State</text>
+</svg>

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-splash: #ff9393;
+  --color-pkmn-red: #ff1c1c;
+  --font-nunito: "Nunito", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  background-color: #ff9393;
+}

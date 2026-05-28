@@ -1,0 +1,185 @@
+<svg width="1860" height="720" viewBox="0 0 1860 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1860" height="720" fill="#F3F0EE"/>
+
+  <g font-family="Arial, sans-serif" fill="#A9A3A1" font-size="22">
+    <text x="36" y="68">Splash page</text>
+    <text x="341" y="68">Start Page</text>
+    <text x="647" y="68">Guessing Page</text>
+    <text x="958" y="68">Success Page</text>
+    <text x="1268" y="68">Lost Page</text>
+    <text x="1576" y="68">Completion Page</text>
+  </g>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <!-- Splash -->
+  <g transform="translate(32 88)">
+    <rect width="272" height="588" fill="#FB8D93"/>
+    <g transform="translate(88 205)">
+      <circle cx="48" cy="48" r="44" fill="#FF2222" stroke="#0F0F10" stroke-width="7"/>
+      <path d="M4 48H92" stroke="#0F0F10" stroke-width="7"/>
+      <path d="M48 4C69 4 86 21 92 48H4C10 21 27 4 48 4Z" fill="#FF2222"/>
+      <path d="M48 92C27 92 10 75 4 48H92C86 75 69 92 48 92Z" fill="#F7F7F7"/>
+      <circle cx="48" cy="48" r="14" fill="#F7F7F7" stroke="#0F0F10" stroke-width="6"/>
+    </g>
+    <text x="136" y="330" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="25" font-weight="500">GUESS THE POKEMON</text>
+  </g>
+
+  <!-- Start -->
+  <g transform="translate(341 88)">
+    <rect width="272" height="588" fill="#FB8D93"/>
+    <g transform="translate(88 122)">
+      <circle cx="48" cy="48" r="44" fill="#FF2222" stroke="#0F0F10" stroke-width="7"/>
+      <path d="M4 48H92" stroke="#0F0F10" stroke-width="7"/>
+      <path d="M48 4C69 4 86 21 92 48H4C10 21 27 4 48 4Z" fill="#FF2222"/>
+      <path d="M48 92C27 92 10 75 4 48H92C86 75 69 92 48 92Z" fill="#F7F7F7"/>
+      <circle cx="48" cy="48" r="14" fill="#F7F7F7" stroke="#0F0F10" stroke-width="6"/>
+    </g>
+    <text x="136" y="246" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="23" font-weight="500">GUESS THE POKEMON</text>
+    <rect x="47" y="274" width="178" height="38" rx="8" fill="#FFFFFF" filter="url(#shadow)"/>
+    <text x="57" y="298" fill="#212121" font-family="Arial, sans-serif" font-size="15">SELECT GENERATIONS</text>
+    <path d="M203 287L213 297L223 287" stroke="#222222" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="47" y="325" width="178" height="31" rx="6" fill="#FF2A22" filter="url(#shadow)"/>
+    <text x="136" y="347" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="15" font-weight="700">START</text>
+  </g>
+
+  <!-- Guessing -->
+  <g transform="translate(647 88)">
+    <rect width="272" height="588" fill="#D9D9D9"/>
+    <text x="239" y="16" text-anchor="end" fill="#222222" font-family="Arial, sans-serif" font-size="10" font-weight="700">STREAK: 10</text>
+    <text x="136" y="68" text-anchor="middle" fill="#111111" font-family="Arial, sans-serif" font-size="20" font-weight="500">WHO'S THAT POKEMON</text>
+    <g transform="translate(55 88)" fill="#0F0F10">
+      <ellipse cx="100" cy="108" rx="41" ry="52"/>
+      <circle cx="82" cy="63" r="25"/>
+      <circle cx="123" cy="63" r="24"/>
+      <path d="M73 41L64 7L95 19L73 41Z"/>
+      <path d="M130 39L139 4L110 16L130 39Z"/>
+      <rect x="90" y="153" width="27" height="45" rx="12"/>
+      <path d="M48 130C35 118 23 120 11 135C27 139 37 147 42 162C54 156 55 142 48 130Z"/>
+      <path d="M36 134L17 119" stroke="#0F0F10" stroke-width="10" stroke-linecap="round"/>
+      <path d="M23 145L5 153" stroke="#0F0F10" stroke-width="10" stroke-linecap="round"/>
+      <path d="M31 151L23 171" stroke="#0F0F10" stroke-width="10" stroke-linecap="round"/>
+      <path d="M149 85C185 102 201 144 202 194C166 194 145 168 134 132L149 85Z"/>
+    </g>
+    <text x="61" y="242" fill="#FF2A22" font-family="Arial, sans-serif" font-size="22">A</text>
+    <path d="M79 248H114" stroke="#FF2A22" stroke-width="3"/>
+    <path d="M118 248H153" stroke="#FF2A22" stroke-width="3"/>
+    <path d="M157 248H192" stroke="#FF2A22" stroke-width="3"/>
+    <path d="M196 248H231" stroke="#FF2A22" stroke-width="3"/>
+
+    <g font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">
+      <rect x="18" y="287" width="32" height="32" rx="6" fill="#FF2A22"/><text x="34" y="310" fill="#FFFFFF">A</text>
+      <rect x="54" y="287" width="32" height="32" rx="6" fill="#FF2A22"/><text x="70" y="310" fill="#FFFFFF">B</text>
+      <rect x="90" y="287" width="32" height="32" rx="6" fill="#FF2A22"/><text x="106" y="310" fill="#FFFFFF">C</text>
+      <rect x="126" y="287" width="32" height="32" rx="6" fill="#FF2A22"/><text x="142" y="310" fill="#FFFFFF">D</text>
+      <rect x="162" y="287" width="32" height="32" rx="6" fill="#FF2A22"/><text x="178" y="310" fill="#FFFFFF">E</text>
+      <rect x="198" y="287" width="32" height="32" rx="6" fill="#FF2A22"/><text x="214" y="310" fill="#FFFFFF">F</text>
+
+      <rect x="18" y="325" width="32" height="32" rx="6" fill="#FF2A22"/><text x="34" y="348" fill="#FFFFFF">G</text>
+      <rect x="54" y="325" width="32" height="32" rx="6" fill="#FF2A22"/><text x="70" y="348" fill="#FFFFFF">H</text>
+      <rect x="90" y="325" width="32" height="32" rx="6" fill="#FF2A22"/><text x="106" y="348" fill="#FFFFFF">I</text>
+      <rect x="126" y="325" width="32" height="32" rx="6" fill="#F2A2A4"/><text x="142" y="348" fill="#FFFFFF">J</text>
+      <rect x="162" y="325" width="32" height="32" rx="6" fill="#FF2A22"/><text x="178" y="348" fill="#FFFFFF">K</text>
+      <rect x="198" y="325" width="32" height="32" rx="6" fill="#FF2A22"/><text x="214" y="348" fill="#FFFFFF">L</text>
+
+      <rect x="18" y="363" width="32" height="32" rx="6" fill="#FF2A22"/><text x="34" y="386" fill="#FFFFFF">M</text>
+      <rect x="54" y="363" width="32" height="32" rx="6" fill="#FF2A22"/><text x="70" y="386" fill="#FFFFFF">N</text>
+      <rect x="90" y="363" width="32" height="32" rx="6" fill="#FF2A22"/><text x="106" y="386" fill="#FFFFFF">O</text>
+      <rect x="126" y="363" width="32" height="32" rx="6" fill="#FF2A22"/><text x="142" y="386" fill="#FFFFFF">P</text>
+      <rect x="162" y="363" width="32" height="32" rx="6" fill="#FF2A22"/><text x="178" y="386" fill="#FFFFFF">Q</text>
+      <rect x="198" y="363" width="32" height="32" rx="6" fill="#FF2A22"/><text x="214" y="386" fill="#FFFFFF">R</text>
+
+      <rect x="18" y="401" width="32" height="32" rx="6" fill="#FF2A22"/><text x="34" y="424" fill="#FFFFFF">S</text>
+      <rect x="54" y="401" width="32" height="32" rx="6" fill="#FF2A22"/><text x="70" y="424" fill="#FFFFFF">T</text>
+      <rect x="90" y="401" width="32" height="32" rx="6" fill="#FF2A22"/><text x="106" y="424" fill="#FFFFFF">U</text>
+      <rect x="126" y="401" width="32" height="32" rx="6" fill="#FF2A22"/><text x="142" y="424" fill="#FFFFFF">V</text>
+      <rect x="162" y="401" width="32" height="32" rx="6" fill="#FF2A22"/><text x="178" y="424" fill="#FFFFFF">W</text>
+      <rect x="198" y="401" width="32" height="32" rx="6" fill="#FF2A22"/><text x="214" y="424" fill="#FFFFFF">X</text>
+
+      <rect x="90" y="439" width="32" height="32" rx="6" fill="#FF2A22"/><text x="106" y="462" fill="#FFFFFF">Y</text>
+      <rect x="126" y="439" width="32" height="32" rx="6" fill="#FF2A22"/><text x="142" y="462" fill="#FFFFFF">Z</text>
+    </g>
+  </g>
+
+  <!-- Success -->
+  <g transform="translate(958 88)">
+    <rect width="272" height="588" fill="#D9D9D9"/>
+    <text x="136" y="102" text-anchor="middle" fill="#111111" font-family="Arial, sans-serif" font-size="18" font-weight="500">YOU ARE CORRECT!</text>
+    <g transform="translate(52 162)">
+      <path d="M100 109C86 102 82 82 88 56C93 34 106 16 122 11C137 6 152 13 160 29C167 44 166 65 162 84C158 103 146 123 131 131C120 137 109 135 100 109Z" fill="#F6DD53" stroke="#9E8330" stroke-width="1.2"/>
+      <path d="M91 96C71 90 57 76 52 59C47 42 53 28 66 24C79 20 93 29 98 46C102 60 99 77 91 96Z" fill="#F8E35E" stroke="#9E8330" stroke-width="1.2"/>
+      <path d="M160 57C183 71 194 95 192 118C190 134 180 145 168 145C157 145 146 136 141 122C134 103 138 77 160 57Z" fill="#F6DD53" stroke="#9E8330" stroke-width="1.2"/>
+      <path d="M131 20L142 3L147 28Z" fill="#F8E35E" stroke="#9E8330" stroke-width="1.2"/>
+      <path d="M109 24L98 7L122 19Z" fill="#F8E35E" stroke="#9E8330" stroke-width="1.2"/>
+      <ellipse cx="121" cy="54" rx="18" ry="12" fill="#624E46"/>
+      <ellipse cx="155" cy="59" rx="16" ry="11" fill="#624E46"/>
+      <path d="M94 88C79 93 66 104 57 121" stroke="#9E8330" stroke-width="6" stroke-linecap="round"/>
+      <path d="M56 120L43 115" stroke="#9E8330" stroke-width="5" stroke-linecap="round"/>
+      <path d="M58 121L48 133" stroke="#9E8330" stroke-width="5" stroke-linecap="round"/>
+      <path d="M59 122L61 138" stroke="#9E8330" stroke-width="5" stroke-linecap="round"/>
+      <path d="M179 83C197 87 210 101 218 122" stroke="#9E8330" stroke-width="6" stroke-linecap="round"/>
+      <path d="M216 121L229 111" stroke="#9E8330" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <text x="136" y="312" text-anchor="middle" fill="#FF2A22" font-family="Arial, sans-serif" font-size="22" font-weight="500">ABRA</text>
+    <text x="136" y="333" text-anchor="middle" fill="#FF2A22" font-family="Arial, sans-serif" font-size="14" font-weight="500">DEX #63</text>
+    <text x="136" y="362" text-anchor="middle" fill="#1F1F1F" font-family="Arial, sans-serif" font-size="12">
+      <tspan x="136" dy="0">Using its ability to read minds, it will</tspan>
+      <tspan x="136" dy="17">identify impending danger</tspan>
+      <tspan x="136" dy="17">and Teleport to safety.</tspan>
+    </text>
+    <rect x="71" y="420" width="130" height="34" rx="7" fill="#FF2A22"/>
+    <text x="136" y="443" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="15" font-weight="700">NEXT POKEMON</text>
+  </g>
+
+  <!-- Lost -->
+  <g transform="translate(1268 88)">
+    <rect width="272" height="588" fill="#D9D9D9"/>
+    <text x="136" y="100" text-anchor="middle" fill="#111111" font-family="Arial, sans-serif" font-size="18" font-weight="500">BETTER LUCK NEXT TIME</text>
+    <text x="136" y="132" text-anchor="middle" fill="#111111" font-family="Arial, sans-serif" font-size="12" font-weight="700">STREAK: 10</text>
+    <g transform="translate(52 162)">
+      <path d="M100 109C86 102 82 82 88 56C93 34 106 16 122 11C137 6 152 13 160 29C167 44 166 65 162 84C158 103 146 123 131 131C120 137 109 135 100 109Z" fill="#F6DD53" stroke="#9E8330" stroke-width="1.2"/>
+      <path d="M91 96C71 90 57 76 52 59C47 42 53 28 66 24C79 20 93 29 98 46C102 60 99 77 91 96Z" fill="#F8E35E" stroke="#9E8330" stroke-width="1.2"/>
+      <path d="M160 57C183 71 194 95 192 118C190 134 180 145 168 145C157 145 146 136 141 122C134 103 138 77 160 57Z" fill="#F6DD53" stroke="#9E8330" stroke-width="1.2"/>
+      <path d="M131 20L142 3L147 28Z" fill="#F8E35E" stroke="#9E8330" stroke-width="1.2"/>
+      <path d="M109 24L98 7L122 19Z" fill="#F8E35E" stroke="#9E8330" stroke-width="1.2"/>
+      <ellipse cx="121" cy="54" rx="18" ry="12" fill="#624E46"/>
+      <ellipse cx="155" cy="59" rx="16" ry="11" fill="#624E46"/>
+      <path d="M94 88C79 93 66 104 57 121" stroke="#9E8330" stroke-width="6" stroke-linecap="round"/>
+      <path d="M56 120L43 115" stroke="#9E8330" stroke-width="5" stroke-linecap="round"/>
+      <path d="M58 121L48 133" stroke="#9E8330" stroke-width="5" stroke-linecap="round"/>
+      <path d="M59 122L61 138" stroke="#9E8330" stroke-width="5" stroke-linecap="round"/>
+      <path d="M179 83C197 87 210 101 218 122" stroke="#9E8330" stroke-width="6" stroke-linecap="round"/>
+      <path d="M216 121L229 111" stroke="#9E8330" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <text x="136" y="312" text-anchor="middle" fill="#FF2A22" font-family="Arial, sans-serif" font-size="22" font-weight="500">ABRA</text>
+    <text x="136" y="333" text-anchor="middle" fill="#FF2A22" font-family="Arial, sans-serif" font-size="14" font-weight="500">DEX #63</text>
+    <text x="136" y="362" text-anchor="middle" fill="#1F1F1F" font-family="Arial, sans-serif" font-size="12">
+      <tspan x="136" dy="0">Using its ability to read minds, it will</tspan>
+      <tspan x="136" dy="17">identify impending danger</tspan>
+      <tspan x="136" dy="17">and Teleport to safety.</tspan>
+    </text>
+    <rect x="79" y="420" width="114" height="34" rx="7" fill="#202020"/>
+    <text x="136" y="443" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="15" font-weight="700">PLAY AGAIN</text>
+  </g>
+
+  <!-- Completion -->
+  <g transform="translate(1577 88)">
+    <rect width="272" height="588" fill="#FFFFFF"/>
+    <text x="136" y="126" text-anchor="middle" fill="#111111" font-family="Arial, sans-serif" font-size="18" font-weight="500">POKEDEX COMPLETE</text>
+    <text x="136" y="160" text-anchor="middle" fill="#6D6D6D" font-family="Arial, sans-serif" font-size="13">You cleared every Pokemon in this pack.</text>
+    <circle cx="136" cy="266" r="68" fill="#FB8D93"/>
+    <circle cx="136" cy="266" r="42" fill="#FF2A22" stroke="#111111" stroke-width="6"/>
+    <path d="M94 266H178" stroke="#111111" stroke-width="6"/>
+    <circle cx="136" cy="266" r="13" fill="#F7F7F7" stroke="#111111" stroke-width="5"/>
+    <text x="136" y="384" text-anchor="middle" fill="#111111" font-family="Arial, sans-serif" font-size="34" font-weight="700">151 / 151</text>
+    <text x="136" y="414" text-anchor="middle" fill="#6D6D6D" font-family="Arial, sans-serif" font-size="14">Generation 1 completed</text>
+    <rect x="52" y="462" width="168" height="36" rx="8" fill="#FF2A22"/>
+    <text x="136" y="486" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="15" font-weight="700">PLAY NEXT PACK</text>
+    <rect x="52" y="511" width="168" height="36" rx="8" fill="#F4F4F4" stroke="#D7D7D7"/>
+    <text x="136" y="535" text-anchor="middle" fill="#222222" font-family="Arial, sans-serif" font-size="15" font-weight="700">HOME</text>
+  </g>
+</svg>
