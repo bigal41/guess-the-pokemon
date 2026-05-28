@@ -8,10 +8,12 @@ import { useGameSession } from '../context/GameSessionContext'
 function Home() {
   const [selectedPackId, setSelectedPackId] = useState<string | null>(null)
   const navigate = useNavigate()
-  const { getPackProgress, startGame } = useGameSession()
+  const { getPackProgress, hasPackRun, resetPackRun, startGame } = useGameSession()
   const selectedPackProgress = selectedPackId
     ? getPackProgress(selectedPackId)
     : null
+  const selectedPackHasRun = selectedPackId ? hasPackRun(selectedPackId) : false
+  const startButtonText = selectedPackHasRun ? 'resume run' : 'start game'
 
   const handleStartGame = () => {
     if (!selectedPackId) {
@@ -26,6 +28,15 @@ function Home() {
 
     navigate('/guessing-game')
   }
+
+  const handleResetRun = () => {
+    if (!selectedPackId) {
+      return
+    }
+
+    resetPackRun(selectedPackId)
+  }
+
   return (
     <div className="flex h-dvh items-center justify-center overflow-hidden bg-splash px-4 py-4">
       <div className="flex w-full max-w-md flex-col items-center justify-center">
@@ -41,13 +52,21 @@ function Home() {
           <GenerationSelect
             selectedPackId={selectedPackId}
             selectedPackProgress={selectedPackProgress}
+            selectedPackHasRun={selectedPackHasRun}
             onSelectPack={setSelectedPackId}
           />
           <Button
-            text="start game"
+            text={startButtonText}
             onClick={handleStartGame}
             disabled={!selectedPackId}
           />
+          {selectedPackHasRun ? (
+            <Button
+              text="reset run"
+              onClick={handleResetRun}
+              tone="secondary"
+            />
+          ) : null}
           <Link
             className="mt-3 inline-flex text-xs font-semibold uppercase tracking-[0.16em] text-pkmn-red sm:mt-4 sm:text-sm"
             to="/offline-packs"

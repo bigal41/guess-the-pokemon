@@ -30,7 +30,7 @@ type PokemonPack = {
 }
 
 const GENERATION_PACKS: PokemonPack[] = [
-  { id: 'gen-1', name: 'Generation 1', generation: 1, startId: 1, endId: 3 },
+  { id: 'gen-1', name: 'Generation 1', generation: 1, startId: 1, endId: 151 },
   {
     id: 'gen-2',
     name: 'Generation 2',

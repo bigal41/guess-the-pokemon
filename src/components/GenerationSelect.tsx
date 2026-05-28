@@ -5,12 +5,14 @@ import OfflineReadyBadge from './OfflineReadyBadge'
 type GenerationSelectProps = {
   selectedPackId: string | null
   selectedPackProgress: PackProgress | null
+  selectedPackHasRun: boolean
   onSelectPack: (packId: string) => void
 }
 
 function GenerationSelect({
   selectedPackId,
   selectedPackProgress,
+  selectedPackHasRun,
   onSelectPack,
 }: GenerationSelectProps) {
   const selectedPack =
@@ -48,11 +50,18 @@ function GenerationSelect({
           <p className="font-nunito text-sm font-bold uppercase tracking-[0.12em] text-slate-900 sm:text-base">
             {selectedPack ? selectedPack.name : 'No generation selected'}
           </p>
-          {selectedPack && selectedPackProgress?.completedOnce ? (
-            <span className="rounded-full bg-slate-900 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white sm:text-[11px]">
-              completed
-            </span>
-          ) : null}
+          <div className="flex items-center gap-2">
+            {selectedPack && selectedPackHasRun ? (
+              <span className="rounded-full bg-amber-100 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-700 sm:text-[11px]">
+                in progress
+              </span>
+            ) : null}
+            {selectedPack && selectedPackProgress?.completedOnce ? (
+              <span className="rounded-full bg-slate-900 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white sm:text-[11px]">
+                completed
+              </span>
+            ) : null}
+          </div>
         </div>
         <p className="mt-1 text-xs font-semibold text-slate-500 sm:text-sm">
           {selectedPack

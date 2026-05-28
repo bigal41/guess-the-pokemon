@@ -12,7 +12,7 @@ export const pokemonPacks: PokemonPack[] = [
     "name": "Generation 1",
     "generation": 1,
     "startId": 1,
-    "endId": 3
+    "endId": 151
   },
   {
     "id": "gen-2",

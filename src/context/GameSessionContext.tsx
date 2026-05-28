@@ -33,10 +33,12 @@ type GameSessionContextValue = {
   currentPokemon: Pokemon | null
   puzzleLabel: string
   progressByPack: GameProgress
+  hasPackRun: (packId: string) => boolean
   startGame: (packId: string) => boolean
   guessLetter: (letter: string) => void
   continueGame: () => ContinueGameResult
   resetSession: () => void
+  resetPackRun: (packId: string) => void
   getPackProgress: (packId: string) => PackProgress
 }
 
@@ -55,6 +57,13 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
   const getPackProgress = useCallback(
     (packId: string) => progressByPack[packId] ?? createDefaultPackProgress(),
     [progressByPack],
+  )
+  const hasPackRun = useCallback(
+    (packId: string) => {
+      const packRun = runsByPack[packId]
+      return !!packRun
+    },
+    [runsByPack],
   )
 
   useEffect(() => {
@@ -270,7 +279,10 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
         return currentSession
       }
 
-      const nextAttempts = currentSession.attempts + 1
+      const nextAttempts =
+        currentSession.roundStatus === 'lost'
+          ? currentSession.attempts + 1
+          : currentSession.attempts
 
       setRunsByPack((currentRuns) => ({
         ...currentRuns,
@@ -299,16 +311,29 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
     setSession(null)
   }, [])
 
+  const resetPackRun = useCallback((packId: string) => {
+    setRunsByPack((currentRuns) => {
+      const { [packId]: _removedRun, ...remainingRuns } = currentRuns
+      return remainingRuns
+    })
+
+    setSession((currentSession) =>
+      currentSession?.packId === packId ? null : currentSession,
+    )
+  }, [])
+
   const value = useMemo<GameSessionContextValue>(
     () => ({
       session,
       currentPokemon,
       puzzleLabel,
       progressByPack,
+      hasPackRun,
       startGame,
       guessLetter,
       continueGame,
       resetSession,
+      resetPackRun,
       getPackProgress,
     }),
     [
@@ -316,8 +341,10 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
       currentPokemon,
       getPackProgress,
       guessLetter,
+      hasPackRun,
       puzzleLabel,
       progressByPack,
+      resetPackRun,
       resetSession,
       session,
       startGame,
