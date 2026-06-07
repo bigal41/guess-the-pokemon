@@ -313,7 +313,10 @@ const MAIN_SERIES_VERSIONS = new Set([
 ])
 
 function normalizeDexEntry(value: string) {
-  return value.replace(/[\f\n\r]+/g, ' ').replace(/\s+/g, ' ').trim()
+  return value
+    .replace(/[\f\n\r]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 function getDexEntry(species: PokemonSpeciesApiResponse) {
@@ -321,8 +324,9 @@ function getDexEntry(species: PokemonSpeciesApiResponse) {
     (entry) => entry.language.name === 'en',
   )
   const preferredEntry =
-    englishEntries.find((entry) => MAIN_SERIES_VERSIONS.has(entry.version.name)) ??
-    englishEntries[0]
+    englishEntries.find((entry) =>
+      MAIN_SERIES_VERSIONS.has(entry.version.name),
+    ) ?? englishEntries[0]
 
   return normalizeDexEntry(
     preferredEntry?.flavor_text ?? 'Dex entry unavailable.',
@@ -332,7 +336,9 @@ function getDexEntry(species: PokemonSpeciesApiResponse) {
 async function buildPokemonRecord(id: number): Promise<PokemonRecord> {
   const [pokemon, species] = await Promise.all([
     fetchJson<PokemonApiResponse>(`${POKEAPI_BASE}/pokemon/${id}`),
-    fetchJson<PokemonSpeciesApiResponse>(`${POKEAPI_BASE}/pokemon-species/${id}`),
+    fetchJson<PokemonSpeciesApiResponse>(
+      `${POKEAPI_BASE}/pokemon-species/${id}`,
+    ),
   ])
 
   const displayName = titleCasePokemonName(pokemon.name)

@@ -3,6 +3,7 @@ import {
   isPackDownloaded,
   subscribeToOfflinePackUpdates,
 } from '../lib/offline-packs'
+import Badge from './Badge/Badge.tsx'
 
 type OfflineReadyBadgeProps = {
   packId: string
@@ -25,11 +26,7 @@ function OfflineReadyBadge({ packId }: OfflineReadyBadgeProps) {
     return null
   }
 
-  return (
-    <span className="rounded-full bg-green-100/80 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-green-700 sm:text-[11px]">
-      offline ready
-    </span>
-  )
+  return <Badge tone="success">offline ready</Badge>
 }
 
 export default OfflineReadyBadge

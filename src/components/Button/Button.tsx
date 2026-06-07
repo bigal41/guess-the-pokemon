@@ -15,8 +15,8 @@ const Button = ({
     <button
       className={`mt-4 h-12 w-full rounded-xl px-4 text-sm font-semibold uppercase tracking-[0.16em] shadow-md transition-opacity disabled:cursor-not-allowed disabled:opacity-50 sm:mt-5 sm:h-14 sm:text-base ${
         tone === 'primary'
-          ? 'bg-pkmn-red text-white'
-          : 'bg-white text-slate-700 shadow-sm ring-1 ring-slate-200'
+          ? 'bg-primary-500 text-neutral-50 hover:bg-primary-600'
+          : 'bg-neutral-50 text-neutral-700 shadow-sm ring-1 ring-neutral-200 hover:bg-neutral-100'
       }`}
       disabled={disabled}
       onClick={onClick}

@@ -5,6 +5,7 @@ import App from './App.tsx'
 import UpdatePrompt from './components/UpdatePrompt.tsx'
 import { GameSessionProvider } from './context/GameSessionContext.tsx'
 import './index.css'
+import DesignSystem from './pages/DesignSystem.tsx'
 import Guessing from './pages/Guessing.tsx'
 import Home from './pages/Home.tsx'
 import OfflinePacksPage from './pages/OfflinePacksPage.tsx'
@@ -69,9 +70,12 @@ function AppShell() {
           })
         })
 
-        intervalId = window.setInterval(() => {
-          void registration.update()
-        }, 60 * 60 * 1000)
+        intervalId = window.setInterval(
+          () => {
+            void registration.update()
+          },
+          60 * 60 * 1000,
+        )
       } catch {
         setWaitingWorker(null)
       }
@@ -105,6 +109,7 @@ function AppShell() {
       <Routes>
         <Route index element={<App />} />
         <Route path="home" element={<Home />} />
+        <Route path="design-system" element={<DesignSystem />} />
         <Route path="guessing-game" element={<Guessing />} />
         <Route path="pokedex-complete" element={<PokedexComplete />} />
         <Route path="reveal" element={<Success />} />

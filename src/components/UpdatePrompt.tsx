@@ -11,24 +11,24 @@ function UpdatePrompt({ onDismiss, onUpdate, visible }: UpdatePromptProps) {
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-4">
-      <div className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-white shadow-xl">
+      <div className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-2xl bg-secondary-900 px-4 py-3 text-secondary-50 shadow-xl">
         <div className="min-w-0 flex-1">
           <p className="font-nunito text-sm font-black uppercase tracking-[0.16em]">
             Update available
           </p>
-          <p className="mt-1 text-xs text-slate-200">
+          <p className="mt-1 text-xs text-secondary-100">
             A newer version is ready to install.
           </p>
         </div>
         <button
-          className="rounded-lg bg-white px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-slate-900"
+          className="rounded-lg bg-neutral-50 px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-secondary-900"
           onClick={onUpdate}
           type="button"
         >
           update
         </button>
         <button
-          className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-300"
+          className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary-200"
           onClick={onDismiss}
           type="button"
         >

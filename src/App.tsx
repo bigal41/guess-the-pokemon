@@ -32,7 +32,7 @@ function App() {
         height={145}
         width={145}
       />
-      <h1 className="mt-4 max-w-[12rem] text-balance font-nunito text-3xl leading-none font-black uppercase text-white sm:max-w-none sm:text-4xl">
+      <h1 className="mt-4 max-w-[12rem] text-balance font-nunito text-3xl leading-none font-black uppercase text-neutral-50 sm:max-w-none sm:text-4xl">
         guess the pokemon
       </h1>
     </div>

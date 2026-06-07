@@ -8,6 +8,7 @@ export type PackProgress = {
 
 export type PackRun = {
   clearedPokemonIds: number[]
+  currentStreak: number
   attempts: number
   startedAt: number
 }
@@ -19,7 +20,9 @@ const PROGRESS_STORAGE_KEY = 'guess-the-pokemon-progress'
 const RUNS_STORAGE_KEY = 'guess-the-pokemon-runs'
 
 function isBrowser() {
-  return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+  return (
+    typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+  )
 }
 
 export function createDefaultPackProgress(): PackProgress {
@@ -76,11 +79,16 @@ function normalizePackRun(value: unknown): PackRun | null {
     typeof candidate.attempts === 'number' && candidate.attempts > 0
       ? candidate.attempts
       : 1
+  const currentStreak =
+    typeof candidate.currentStreak === 'number' && candidate.currentStreak >= 0
+      ? candidate.currentStreak
+      : 0
   const startedAt =
     typeof candidate.startedAt === 'number' ? candidate.startedAt : Date.now()
 
   return {
     clearedPokemonIds,
+    currentStreak,
     attempts,
     startedAt,
   }
@@ -135,7 +143,9 @@ export function loadGameRuns(): GameRuns {
 
     return Object.fromEntries(
       Object.entries(parsed)
-        .map(([packId, packRun]) => [packId, normalizePackRun(packRun)] as const)
+        .map(
+          ([packId, packRun]) => [packId, normalizePackRun(packRun)] as const,
+        )
         .filter((entry): entry is [string, PackRun] => entry[1] !== null),
     )
   } catch {

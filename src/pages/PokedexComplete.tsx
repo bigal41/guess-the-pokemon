@@ -1,4 +1,6 @@
 import { Navigate, useNavigate } from 'react-router'
+import Badge from '../components/Badge/Badge.tsx'
+import GameScreenShell from '../components/GameScreenShell'
 import { useGameSession } from '../context/GameSessionContext'
 import { getPackPokemon } from '../lib/game-session'
 
@@ -37,46 +39,47 @@ function PokedexComplete() {
   }
 
   return (
-    <div className="flex h-dvh items-center justify-center overflow-hidden bg-splash px-3 py-3">
-      <div className="flex h-full max-h-[52rem] w-full max-w-xl flex-col items-center justify-center rounded-[2rem] bg-white/92 px-5 py-6 text-center shadow-lg shadow-black/10">
-        <p className="font-nunito text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 sm:text-sm">
-          Pokedex Complete
-        </p>
-        <h1 className="mt-4 max-w-xs font-nunito text-3xl font-black uppercase text-slate-900 sm:text-5xl">
-          Generation cleared
-        </h1>
-        <p className="mt-4 font-nunito text-sm font-semibold uppercase tracking-[0.16em] text-pkmn-red sm:text-base">
-          {clearedCount} of {totalCount} Pokemon guessed
-        </p>
-        <p className="mt-4 max-w-md font-nunito text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
-          You completed this dex in {session.attempts} attempts and{' '}
-          {formatDuration(clearDuration)}. Your best streak this run was{' '}
-          {session.bestStreak}.
-        </p>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-          <span className="rounded-full bg-slate-900 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white sm:text-xs">
-            total clears {packProgress.totalClears}
-          </span>
-          {packProgress.fastestClearMs !== null ? (
-            <span className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-700 sm:text-xs">
-              fastest clear {formatDuration(packProgress.fastestClearMs)}
-            </span>
-          ) : null}
-          {packProgress.fewestAttemptsToClear !== null ? (
-            <span className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-700 sm:text-xs">
-              fewest attempts {packProgress.fewestAttemptsToClear}
-            </span>
-          ) : null}
-        </div>
-        <button
-          className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-6 font-nunito text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-slate-800"
-          onClick={handleBackHome}
-          type="button"
-        >
-          back to home
-        </button>
+    <GameScreenShell
+      cardClassName="items-center justify-center px-5 py-6 text-center"
+      contentClassName="max-w-xl"
+    >
+      <p className="font-nunito text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500 sm:text-sm">
+        Pokedex Complete
+      </p>
+      <h1 className="mt-4 max-w-xs font-nunito text-3xl font-black uppercase text-neutral-900 sm:text-5xl">
+        Generation cleared
+      </h1>
+      <p className="mt-4 font-nunito text-sm font-semibold uppercase tracking-[0.16em] text-primary-600 sm:text-base">
+        {clearedCount} of {totalCount} Pokemon guessed
+      </p>
+      <p className="mt-4 max-w-md font-nunito text-sm leading-6 text-neutral-700 sm:text-base sm:leading-7">
+        You completed this dex in {session.attempts} attempts and{' '}
+        {formatDuration(clearDuration)}. Your best streak this run was{' '}
+        {session.bestStreak}.
+      </p>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+        <Badge size="regular" tone="dark">
+          total clears {packProgress.totalClears}
+        </Badge>
+        {packProgress.fastestClearMs !== null ? (
+          <Badge size="regular" tone="light">
+            fastest clear {formatDuration(packProgress.fastestClearMs)}
+          </Badge>
+        ) : null}
+        {packProgress.fewestAttemptsToClear !== null ? (
+          <Badge size="regular" tone="light">
+            fewest attempts {packProgress.fewestAttemptsToClear}
+          </Badge>
+        ) : null}
       </div>
-    </div>
+      <button
+        className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-secondary-900 px-6 font-nunito text-sm font-black uppercase tracking-[0.18em] text-secondary-50 transition hover:bg-secondary-800"
+        onClick={handleBackHome}
+        type="button"
+      >
+        back to home
+      </button>
+    </GameScreenShell>
   )
 }
 

@@ -71,7 +71,13 @@ export function getPuzzleLabel(pokemon: Pokemon) {
 }
 
 export function getRequiredLetters(puzzleLabel: string) {
-  return [...new Set(puzzleLabel.split('').filter((character) => letterPattern.test(character)))]
+  return [
+    ...new Set(
+      puzzleLabel
+        .split('')
+        .filter((character) => letterPattern.test(character)),
+    ),
+  ]
 }
 
 export function isPuzzleSolved(puzzleLabel: string, guessedLetters: string[]) {

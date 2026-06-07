@@ -15,16 +15,16 @@ import {
   saveGameProgress,
   saveGameRuns,
 } from '../lib/game-progress'
-import type { Pokemon } from '../types/pokemon'
 import {
   createSessionState,
+  type GameSessionState,
   getPackPokemon,
   getPokemonById,
   getPuzzleLabel,
   getRandomPokemon,
   isPuzzleSolved,
-  type GameSessionState,
 } from '../lib/game-session'
+import type { Pokemon } from '../types/pokemon'
 
 type ContinueGameResult = 'continued' | 'completed' | 'failed'
 
@@ -97,6 +97,8 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
         existingRun && !shouldStartFreshRun ? existingRun.startedAt : Date.now()
       const attempts =
         existingRun && !shouldStartFreshRun ? existingRun.attempts : 1
+      const currentStreak =
+        existingRun && !shouldStartFreshRun ? existingRun.currentStreak : 0
       const clearedPokemonIds =
         existingRun && !shouldStartFreshRun ? existingRun.clearedPokemonIds : []
 
@@ -105,6 +107,7 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
           ...currentRuns,
           [packId]: {
             clearedPokemonIds,
+            currentStreak,
             attempts,
             startedAt,
           },
@@ -116,6 +119,7 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
           attempts,
           bestStreak: packProgress.bestStreak,
           clearedPokemonIds,
+          currentStreak,
           startedAt,
         }),
       )
@@ -159,7 +163,10 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
       if (isPuzzleSolved(currentPuzzleLabel, guessedLetters)) {
         const currentStreak = currentSession.currentStreak + 1
         const clearedPokemonIds = Array.from(
-          new Set([...currentSession.clearedPokemonIds, currentSession.pokemonId]),
+          new Set([
+            ...currentSession.clearedPokemonIds,
+            currentSession.pokemonId,
+          ]),
         )
         const packPokemon = getPackPokemon(currentSession.packId)
         const packCompleted = clearedPokemonIds.length >= packPokemon.length
@@ -167,7 +174,8 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
 
         setProgressByPack((currentProgress) => {
           const existingProgress =
-            currentProgress[currentSession.packId] ?? createDefaultPackProgress()
+            currentProgress[currentSession.packId] ??
+            createDefaultPackProgress()
           const clearDurationMs = Date.now() - currentSession.startedAt
 
           return {
@@ -206,6 +214,7 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
             ...currentRuns,
             [currentSession.packId]: {
               clearedPokemonIds,
+              currentStreak,
               attempts: currentSession.attempts,
               startedAt: currentSession.startedAt,
             },
@@ -288,6 +297,10 @@ function GameSessionProvider({ children }: { children: ReactNode }) {
         ...currentRuns,
         [currentSession.packId]: {
           clearedPokemonIds: currentSession.clearedPokemonIds,
+          currentStreak:
+            currentSession.roundStatus === 'lost'
+              ? 0
+              : currentSession.currentStreak,
           attempts: nextAttempts,
           startedAt: currentSession.startedAt,
         },
